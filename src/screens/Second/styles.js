@@ -58,3 +58,68 @@ export const Logo = styled.Image`
   height: 80px;
   margin-top: 30px;
 `;
+
+export const ModalBody = styled.View`
+  padding: 10px;
+  background: #fff;
+  z-index: 5;
+  position: absolute;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+`;
+
+export const ModalHeader = styled.View`
+  flex-direction: row;
+`;
+
+export const ModalTitle = styled.Text`
+  margin-left: 18%;
+  font-size: 17px;
+`;
+
+export const InputView = styled.View`
+  flex-direction: row;
+  margin-top: 10%;
+`;
+
+export const AddPhotoView = styled.View``;
+
+export const NameView = styled.View`
+  margin-left: 10%;
+`;
+
+export const NameText = styled.Text``;
+
+export const NameInput = styled.TextInput`
+  padding: 5px;
+  width: 120%;
+  height: 40px;
+`;
+
+export const OptionView = styled.View`
+  margin-top: 5%;
+`;
+
+export const ViewTitle = styled.Text`
+  font-weight: bold;
+`;
+
+export const BtnView = styled.View`
+  flex-direction: row;
+  border-width: 1px;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  justify-content: space-between;
+`;
+
+export const OptionButton = styled.TouchableOpacity``;
+
+export const OptionBtnText = styled.Text``;
+
+export const ModalClose = styled.TouchableOpacity`
+  background: #fff;
+`;
+
+export const ModalBtnText = styled.Text``;
