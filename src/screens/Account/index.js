@@ -21,8 +21,22 @@ import {
 } from './styles';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import CameraRoll from "react-native-photo-library";
 
 export default function Account() {
+  function handleButtonPress() {
+    CameraRoll.getPhotos({
+        first: 20,
+        assetType: 'Photos',
+      })
+      .then(r => {
+        this.setState({ photos: r.edges });
+      })
+      .catch((err) => {
+         //Error Loading Images
+      });
+    };
+
   return(
     <Container>
         <Title> Conta </Title>
@@ -31,7 +45,7 @@ export default function Account() {
         </SectionDiv>
 
           <GroupView>
-          <AddPhotoView>
+          <AddPhotoView onPress={()=> handleButtonPress()}>
             <Icon name="person" size={25} color="#fff" />
           </AddPhotoView>
           <ImageOption>

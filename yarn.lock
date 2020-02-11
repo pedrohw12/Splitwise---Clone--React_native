@@ -5615,6 +5615,11 @@ react-native-iphone-x-helper@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
 
+react-native-photo-library@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-photo-library/-/react-native-photo-library-1.0.4.tgz#4dc5cf83c91ad27ad483bfe1ee9ca1985cfce217"
+  integrity sha512-JO31U/tDg9+lC3FN3Vz673GCUulhACeETVnNTTOd1QtUFXv0jKDNVqLLPzFfMIzmC3TXkz0t9enM8N6IaMHnTQ==
+
 react-native-reanimated@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.7.0.tgz#896db2576552ac59d288a1f6c7f00afc171f240c"
