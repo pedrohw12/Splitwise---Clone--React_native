@@ -30,7 +30,7 @@ import {
 
 import AddPhoto from 'react-native-vector-icons/MaterialIcons';
 
-function Main() {
+function Main(props) {
   const [ isVisible, setIsvisible ] = useState(true);
   const [ btnShow, setBtnshow ] = useState(false);
   const [ inputValue, setInputvalue ] = useState("");
@@ -41,6 +41,10 @@ function Main() {
 
   function saveInput(t) {
     setInputvalue(t)
+  }
+
+  function handleDone() {
+    props.setName(inputValue);
   }
 
   return(
@@ -68,7 +72,7 @@ function Main() {
             </ModalClose>
             <ModalTitle> Criar um grupo </ModalTitle>
             {btnShow &&
-              <ModalClose onPress={()=> {}}> 
+              <ModalClose onPress={()=> { handleDone() }}> 
                 <ModalTitle style={{marginLeft: 50}}> feito </ModalTitle>
               </ModalClose>
             }
@@ -80,8 +84,8 @@ function Main() {
               </ModalBtnText>
             </AddPhotoView>
             <NameView>
-              <NameText> Nome do grupo </NameText>
-              <NameInput placeholder="Rua Gergelim 123" onChangeText={(t)=>  [setBtnshow(true), saveInput(t)] } />
+              <NameText> Nome do grupo {props.name} </NameText>
+              <NameInput placeholder={props.name} onChangeText={(t)=>  [setBtnshow(true), saveInput(t) ] } />
             </NameView>
           </InputView>
           <OptionView>
