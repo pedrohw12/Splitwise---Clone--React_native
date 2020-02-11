@@ -26,12 +26,21 @@ import {
   BtnView,
   OptionButton,
   OptionBtnText,
+  NewGroupDiv,
+  NewGroupTitle,
+  AddGroupBtn,
+  AddGroupBtnTxt,
+  GroupList,
+  ItemDiv,
+  ItemName,
+  ClearBtn,
+  ClearBtnTxt,
 } from './styles';
 
 import AddPhoto from 'react-native-vector-icons/MaterialIcons';
 
 function Main(props) {
-  const [ isVisible, setIsvisible ] = useState(true);
+  const [ isVisible, setIsvisible ] = useState(false);
   const [ btnShow, setBtnshow ] = useState(false);
   const [ inputValue, setInputvalue ] = useState("");
 
@@ -45,6 +54,11 @@ function Main(props) {
 
   function handleDone() {
     props.setName(inputValue);
+    setIsvisible(!isVisible);
+    if (inputValue.length <= 1) {
+      alert('você precisa colocar um nome')
+    }
+    return;
   }
 
   return(
@@ -52,6 +66,7 @@ function Main(props) {
       <TitleDiv>
         <Title> Grupos </Title>
       </TitleDiv>
+      {props.name === "Rua Gergelim 123" &&
       <Body>
         <Welcome> Você não possui grupos no momento. </Welcome>
         <Message> 
@@ -64,14 +79,15 @@ function Main(props) {
         </AddFriends>
         <Logo source={require('../../assets/logo.png')} />
       </Body>
-      {isVisible &&
+      }
+      {isVisible && 
         <ModalBody>
           <ModalHeader>
             <ModalClose onPress={()=> setIsvisible(!isVisible)}> 
               <ModalBtnText> cancel </ModalBtnText>
             </ModalClose>
             <ModalTitle> Criar um grupo </ModalTitle>
-            {btnShow &&
+            {btnShow && 
               <ModalClose onPress={()=> { handleDone() }}> 
                 <ModalTitle style={{marginLeft: 50}}> feito </ModalTitle>
               </ModalClose>
@@ -106,6 +122,30 @@ function Main(props) {
             </BtnView>
           </OptionView>
         </ModalBody>
+      }
+      {props.name.length !== 16 && !isVisible &&
+        <>
+          <NewGroupDiv>
+            <NewGroupTitle> Novo grupo </NewGroupTitle>
+            <AddGroupBtn onPress={()=> setIsvisible(!isVisible)}>
+              <AddGroupBtnTxt> Adicionar grupos </AddGroupBtnTxt>
+            </AddGroupBtn>
+          </NewGroupDiv>
+          <GroupList>
+            <ItemDiv>
+              <ItemName>
+                {props.name}
+              </ItemName>
+            </ItemDiv>
+            <ItemDiv>
+              <ItemName>
+                {props.name}
+              </ItemName>
+            </ItemDiv>
+            <ClearBtn onPress={()=> {props.setName("")}}>
+            </ClearBtn>
+          </GroupList>
+        </>
       }
     </Container>
   );

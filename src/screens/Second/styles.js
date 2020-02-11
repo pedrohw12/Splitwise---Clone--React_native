@@ -140,3 +140,62 @@ export const ModalBtnText = styled.Text`
   color: #fff;
   font-weight: bold;
 `;
+
+export const NewGroupDiv = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  background: #fff;
+`;
+
+export const NewGroupTitle = styled.Text`
+  font-size: 23px;
+`;
+
+export const AddGroupBtn = styled.TouchableOpacity`
+  background: #0097e6;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 150px;
+  height: 40px;
+`;
+
+export const AddGroupBtnTxt = styled.Text`
+  color: #fff;
+  font-weight: bold;
+`;
+
+export const GroupList = styled.ScrollView`
+  flex: 2;
+  margin-top: -70px;
+  background: #fff;
+  margin: 10px;
+`;
+
+export const ItemDiv = styled.View`
+  background: #ddd;
+  padding-left: 10px;
+  justify-content: center;
+  height: 60px;
+  width: 100%;
+  border-bottom-width: 0.8px;
+  border-radius: 4px;
+`;
+
+export const ItemName = styled.Text``;
+
+export const ClearBtn = styled.TouchableOpacity`
+  background: #f00;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80%;
+  margin-top: 15%;
+`;
+
+export const ClearBtnTxt = styled.Text``;
