@@ -16,7 +16,11 @@ import {
   FooterMessageDiv,
   CopyrightButton,
   LastBtnText,
+  AddPhotoView,
+  GroupView,
 } from './styles';
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export default function Account() {
   return(
@@ -25,15 +29,22 @@ export default function Account() {
         <SectionDiv>
           <SectionTitle> Configurações </SectionTitle>
         </SectionDiv>
+
+          <GroupView>
+          <AddPhotoView>
+            <Icon name="person" size={25} color="#fff" />
+          </AddPhotoView>
           <ImageOption>
             <Name> Pedro Wanderley </Name>
             <Email> peu-zico@hotmail.com </Email>
           </ImageOption>
+          </GroupView>
+          
           <OptionButton>
             <OptionText> Digitalizar código </OptionText>
           </OptionButton>
           <OptionButton>
-            <OptionText> Splitwise Pro </OptionText>
+            <OptionText style={{color: "#0097e6"}}> Splitwise Pro </OptionText>
           </OptionButton>
 
         <SectionDiv>
@@ -52,7 +63,7 @@ export default function Account() {
         <OptionButton>
             <OptionText> Avalie o Splitwise </OptionText>
           </OptionButton>
-          <OptionButton>
+          <OptionButton style={{borderBottomWidth: 0.17}}>
             <OptionText> Fale conosco </OptionText>
           </OptionButton>
 

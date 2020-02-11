@@ -27,6 +27,8 @@ import {
   OptionBtnText,
 } from './styles';
 
+import AddPhoto from 'react-native-vector-icons/MaterialIcons';
+
 export default function Main() {
   const [ isVisible, setIsvisible ] = useState(true);
 
@@ -57,7 +59,9 @@ export default function Main() {
           </ModalHeader>
           <InputView>
             <AddPhotoView>
-              <ModalBtnText> PHOTO </ModalBtnText>
+              <ModalBtnText> 
+                <AddPhoto name="add-a-photo" size={30} color="#fff" />  
+              </ModalBtnText>
             </AddPhotoView>
             <NameView>
               <NameText> Nome do grupo </NameText>

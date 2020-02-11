@@ -1,6 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-// import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Add from 'react-native-vector-icons/Octicons';
+import Act from 'react-native-vector-icons/Feather';
 
 import Main from '../screens/Main';
 import Second from '../screens/Second';
@@ -13,35 +15,35 @@ const MainStack = createBottomTabNavigator({
   Main: {
     screen: Main,
     navigationOptions: {
-      // tabBarIcon: <Icon name="search" size={25} />,
+      tabBarIcon: <Icon name="person" size={25} />,
       title:"Amigos",
     }
   },
   Favorites: {
     screen: Second,
     navigationOptions: {
-      // tabBarIcon: <Icon name="star" size={25} />,
+      tabBarIcon: <Icon name="group" size={25} />,
       title:"Grupos",
     }
   },
   Groups: {
     screen: Groups,
     navigationOptions: {
-      // tabBarIcon: <Icon name="star" size={25} />,
+      tabBarIcon: <Add name="plus" size={25} />,
       title:"MAIS",
     }
   },
   Activity: {
     screen: Activity,
     navigationOptions: {
-      // tabBarIcon: <Icon name="star" size={25} />,
+      tabBarIcon: <Act name="activity" size={25} />,
       title:"Atividade",
     }
   },
   Account: {
     screen: Account,
     navigationOptions: {
-      // tabBarIcon: <Icon name="star" size={25} />,
+      tabBarIcon: <Icon name="insert-photo" size={25} />,
       title:"Conta",
     }
   },

@@ -44,13 +44,14 @@ export const AddFriends = styled.TouchableOpacity`
   width: 86%;
   height: 40px;
   border-radius: 4px;
-  background: #d89d;
+  background: #0097e6;
   justify-content: center;
   align-items: center;
 `;
 
 export const ButtonText = styled.Text`
   font-weight: bold;
+  color: #fff;
 `;
 
 export const Logo = styled.Image`
@@ -71,22 +72,34 @@ export const ModalBody = styled.View`
 
 export const ModalHeader = styled.View`
   flex-direction: row;
+  background: #0097e6;
+  border-radius: 4px;
+  padding: 5px;
 `;
 
 export const ModalTitle = styled.Text`
   margin-left: 18%;
   font-size: 17px;
+  color: #fff;
 `;
 
 export const InputView = styled.View`
   flex-direction: row;
-  margin-top: 10%;
+  margin-top: 5%;
 `;
 
-export const AddPhotoView = styled.View``;
+export const AddPhotoView = styled.TouchableOpacity`
+  background: #0097e6;
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+`;
 
 export const NameView = styled.View`
   margin-left: 10%;
+  margin-top: 5%;
 `;
 
 export const NameText = styled.Text``;
@@ -119,7 +132,11 @@ export const OptionButton = styled.TouchableOpacity``;
 export const OptionBtnText = styled.Text``;
 
 export const ModalClose = styled.TouchableOpacity`
-  background: #fff;
+  background: #0097e6;
+  border-radius: 4px;
 `;
 
-export const ModalBtnText = styled.Text``;
+export const ModalBtnText = styled.Text`
+  color: #fff;
+  font-weight: bold;
+`;

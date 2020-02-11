@@ -37,13 +37,14 @@ export const AddFriends = styled.TouchableOpacity`
   width: 86%;
   height: 40px;
   border-radius: 4px;
-  background: #d89d;
+  background: #0097e6;
   justify-content: center;
   align-items: center;
 `;
 
 export const ButtonText = styled.Text`
   font-weight: bold;
+  color: #fff;
 `;
 
 export const Logo = styled.Image`
