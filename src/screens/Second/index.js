@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { 
   Container,
   TitleDiv,
@@ -29,8 +30,18 @@ import {
 
 import AddPhoto from 'react-native-vector-icons/MaterialIcons';
 
-export default function Main() {
+function Main() {
   const [ isVisible, setIsvisible ] = useState(true);
+  const [ btnShow, setBtnshow ] = useState(false);
+  const [ inputValue, setInputvalue ] = useState("");
+
+  useEffect(()=>{
+    console.log(inputValue)
+  },[inputValue])
+
+  function saveInput(t) {
+    setInputvalue(t)
+  }
 
   return(
     <Container>
@@ -56,6 +67,11 @@ export default function Main() {
               <ModalBtnText> cancel </ModalBtnText>
             </ModalClose>
             <ModalTitle> Criar um grupo </ModalTitle>
+            {btnShow &&
+              <ModalClose onPress={()=> {}}> 
+                <ModalTitle style={{marginLeft: 50}}> feito </ModalTitle>
+              </ModalClose>
+            }
           </ModalHeader>
           <InputView>
             <AddPhotoView>
@@ -65,7 +81,7 @@ export default function Main() {
             </AddPhotoView>
             <NameView>
               <NameText> Nome do grupo </NameText>
-              <NameInput placeholder="Rua Gergelim 123" />
+              <NameInput placeholder="Rua Gergelim 123" onChangeText={(t)=>  [setBtnshow(true), saveInput(t)] } />
             </NameView>
           </InputView>
           <OptionView>
@@ -90,3 +106,17 @@ export default function Main() {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    name:state.nameReducer.name,
+  };
+};
+
+const dispatchToProps = (dispatch) => {
+  return {
+    setName: (name)=> dispatch({type: 'SET_NAME', payload: {name}})
+  };
+};
+
+export default connect(mapStateToProps, dispatchToProps)(Main);

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import exampleReducer from './exampleReducer';
+import nameReducer from './nameReducer';
 
 export default combineReducers({
-  exampleReducer
+  nameReducer
 });
