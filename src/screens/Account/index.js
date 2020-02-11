@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Image } from 'react-native';
 import {
   Container,
   Title,
@@ -12,8 +13,6 @@ import {
   Footer,
   Logout,
   ButtonText,
-  FooterMessage,
-  FooterMessageDiv,
   CopyrightButton,
   LastBtnText,
   AddPhotoView,
@@ -21,21 +20,38 @@ import {
 } from './styles';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import CameraRoll from "react-native-photo-library";
+import ImagePicker from 'react-native-image-picker';
 
 export default function Account() {
-  function handleButtonPress() {
-    CameraRoll.getPhotos({
-        first: 20,
-        assetType: 'Photos',
-      })
-      .then(r => {
-        this.setState({ photos: r.edges });
-      })
-      .catch((err) => {
-         //Error Loading Images
+  const [ avatarSource, setAvatarsource ] = useState();
+  const options = {
+    title: 'Select Avatar',
+    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+  };
+
+  function getPhoto() {
+  ImagePicker.showImagePicker(options, (response) => {
+    console.log('Response = ', response);
+  
+    if (response.didCancel) {
+      console.log('User cancelled image picker');
+    } else if (response.error) {
+      console.log('ImagePicker Error: ', response.error);
+    } else if (response.customButton) {
+      console.log('User tapped custom button: ', response.customButton);
+    } else {
+      const source = { uri: response.uri };
+  
+      setAvatarsource({
+        avatarSource: source,
       });
-    };
+    }
+  });
+}
 
   return(
     <Container>
@@ -45,8 +61,8 @@ export default function Account() {
         </SectionDiv>
 
           <GroupView>
-          <AddPhotoView onPress={()=> handleButtonPress()}>
-            <Icon name="person" size={25} color="#fff" />
+          <AddPhotoView onPress={()=> getPhoto()}>
+            <Image source={avatarSource} />
           </AddPhotoView>
           <ImageOption>
             <Name> Pedro Wanderley </Name>
