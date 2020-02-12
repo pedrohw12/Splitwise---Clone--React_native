@@ -18,6 +18,7 @@
     "react-native-photo-library": "^1.0.4",
     "react-native-reanimated": "^1.7.0",
     "react-native-screens": "^2.0.0-beta.2",
+    "react-native-unified-contacts": "^2.0.0-pre.2",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.1.1",
     "react-navigation-stack": "^2.1.1",

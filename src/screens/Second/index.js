@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Image } from 'react-native';
 import { connect } from 'react-redux';
 import { 
   Container,
@@ -38,6 +39,7 @@ import {
 } from './styles';
 
 import AddPhoto from 'react-native-vector-icons/MaterialIcons';
+import ImagePicker from 'react-native-image-picker';
 
 function Main(props) {
   const [ isVisible, setIsvisible ] = useState(false);
@@ -60,6 +62,36 @@ function Main(props) {
     }
     return;
   }
+
+  const [ avatarSource, setAvatarsource ] = useState();
+  const options = {
+    title: 'Select Avatar',
+    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+  };
+
+  function getPhoto() {
+  ImagePicker.showImagePicker(options, (response) => {
+    console.log('Response = ', response);
+  
+    if (response.didCancel) {
+      console.log('User cancelled image picker');
+    } else if (response.error) {
+      console.log('ImagePicker Error: ', response.error);
+    } else if (response.customButton) {
+      console.log('User tapped custom button: ', response.customButton);
+    } else {
+      const source = { uri: response.uri };
+  
+      setAvatarsource({
+        avatarSource: source,
+      });
+    }
+  });
+}
 
   return(
     <Container>
@@ -94,13 +126,13 @@ function Main(props) {
             }
           </ModalHeader>
           <InputView>
-            <AddPhotoView>
+            <AddPhotoView onPress={()=> getPhoto()}>
               <ModalBtnText> 
-                <AddPhoto name="add-a-photo" size={30} color="#fff" />  
+                <Image source={avatarSource} style={{ width: 80, height: 80, borderRadius: 40}} />  
               </ModalBtnText>
             </AddPhotoView>
             <NameView>
-              <NameText> Nome do grupo {props.name} </NameText>
+              <NameText> Nome do grupo </NameText>
               <NameInput placeholder={props.name} onChangeText={(t)=>  [setBtnshow(true), saveInput(t) ] } />
             </NameView>
           </InputView>
@@ -132,11 +164,6 @@ function Main(props) {
             </AddGroupBtn>
           </NewGroupDiv>
           <GroupList>
-            <ItemDiv>
-              <ItemName>
-                {props.name}
-              </ItemName>
-            </ItemDiv>
             <ItemDiv>
               <ItemName>
                 {props.name}

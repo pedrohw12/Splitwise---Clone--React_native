@@ -19,7 +19,6 @@ import {
   GroupView,
 } from './styles';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import ImagePicker from 'react-native-image-picker';
 
 export default function Account() {
@@ -62,7 +61,7 @@ export default function Account() {
 
           <GroupView>
           <AddPhotoView onPress={()=> getPhoto()}>
-            <Image source={avatarSource} />
+            <Image source={avatarSource} style={{ width: 60, height: 60, borderRadius: 30}} />
           </AddPhotoView>
           <ImageOption>
             <Name> Pedro Wanderley </Name>

@@ -22,33 +22,29 @@ export const Body = styled.View`
   background: #fff;
 `;
 
-export const Welcome = styled.Text`
-  font-weight: bold;
-  font-size: 18px;
-`;
-
 export const Message = styled.Text`
   font-size: 16px;
   color: #474a51;
 `;
 
-export const MessageSupport = styled.View``;
+export const GroupList = styled.ScrollView`
+  flex: 2;
+  margin-top: -70px;
+  background: #fff;
+  margin: 10px;
+`;
 
-export const AddFriends = styled.TouchableOpacity`
-  width: 86%;
-  height: 40px;
-  border-radius: 4px;
-  background: #d89d;
+export const ItemDiv = styled.View`
+  background: #0097e6;
+  padding-left: 10px;
   justify-content: center;
-  align-items: center;
+  height: 60px;
+  width: 100%;
+  border-bottom-width: 0.8px;
+  border-radius: 4px;
 `;
 
-export const ButtonText = styled.Text`
+export const ItemName = styled.Text`
+  color: #fff;
   font-weight: bold;
-`;
-
-export const Logo = styled.Image`
-  width: 80px;
-  height: 80px;
-  margin-top: 30px;
 `;
