@@ -11,20 +11,7 @@ import {
   Logo,
 } from './styles';
 
-import Contacts from 'react-native-unified-contacts';
-
 export default function Main() {
-  function getContact() {
-    Contacts.searchContacts( 'Don Draper', (error, contacts) =>  {
-      if (error) {
-        console.error(error);
-      }
-      else {
-        console.log(contacts);
-      }
-    });
-  }
-
   return(
     <Container>
       <TitleDiv>
