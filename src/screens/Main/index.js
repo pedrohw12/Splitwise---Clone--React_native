@@ -20,7 +20,7 @@ export default function Main() {
       <Body>
         <Welcome> Bem-vindo ao Splitwise </Welcome>
         <Message> Você não adicionou amigos ainda. </Message>
-        <AddFriends onPress={()=> getContact()}>
+        <AddFriends onPress={()=> {}}>
           <ButtonText> Adicionar amigos no Splitwise </ButtonText>
         </AddFriends>
         <Logo source={require('../../assets/logo.png')} />
