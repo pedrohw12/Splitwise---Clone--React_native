@@ -1,5 +1,5 @@
 const initialState = {
-  name: "Rua Gergelim 123",
+  name: "",
 };
 
 export default (state = initialState, action) => {

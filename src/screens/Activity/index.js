@@ -18,7 +18,7 @@ function Activity(props) {
         <Title> Atividade recente </Title>
       </TitleDiv>
       <Body>
-        {props.name === "Rua Gergelim 123" &&
+        {!props.name  &&
         <>
         <Message>
           Ainda não houve atividade em sua conta.
@@ -27,14 +27,14 @@ function Activity(props) {
         </>
           }
       </Body>
-      {props.name !== "Rua Gergelim 123" &&
+      {props.name.lenght !== 0 &&
           <GroupList>
             <ItemDiv>
               <ItemName>
                 {props.name}
               </ItemName>
             </ItemDiv>
-            </GroupList>
+          </GroupList>
           }
     </Container>
   );

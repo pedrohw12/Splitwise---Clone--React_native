@@ -98,7 +98,7 @@ function Main(props) {
       <TitleDiv>
         <Title> Grupos </Title>
       </TitleDiv>
-      {props.name === "Rua Gergelim 123" &&
+      {props.name.length === 0 && 
       <Body>
         <Welcome> Você não possui grupos no momento. </Welcome>
         <Message> 
@@ -133,7 +133,7 @@ function Main(props) {
             </AddPhotoView>
             <NameView>
               <NameText> Nome do grupo </NameText>
-              <NameInput placeholder={props.name} onChangeText={(t)=>  [setBtnshow(true), saveInput(t) ] } />
+              <NameInput placeholder="Rua Gergelim 123" onChangeText={(t)=>  [setBtnshow(true), saveInput(t) ] } />
             </NameView>
           </InputView>
           <OptionView>
@@ -155,7 +155,7 @@ function Main(props) {
           </OptionView>
         </ModalBody>
       }
-      {props.name.length !== 16 && !isVisible &&
+      {props.name.length > 0 && !isVisible &&
         <>
           <NewGroupDiv>
             <NewGroupTitle> Novo grupo </NewGroupTitle>
