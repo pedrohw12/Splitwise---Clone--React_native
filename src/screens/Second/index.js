@@ -38,17 +38,12 @@ import {
   ClearBtnTxt,
 } from './styles';
 
-import AddPhoto from 'react-native-vector-icons/MaterialIcons';
 import ImagePicker from 'react-native-image-picker';
 
 function Main(props) {
   const [ isVisible, setIsvisible ] = useState(false);
   const [ btnShow, setBtnshow ] = useState(false);
   const [ inputValue, setInputvalue ] = useState("");
-
-  useEffect(()=>{
-    console.log(inputValue)
-  },[inputValue])
 
   function saveInput(t) {
     setInputvalue(t)
@@ -169,7 +164,7 @@ function Main(props) {
                 {props.name}
               </ItemName>
             </ItemDiv>
-            <ClearBtn onPress={()=> {props.setName("")}}>
+              <ClearBtn onPress={()=> {props.setName("")}}>
             </ClearBtn>
           </GroupList>
         </>
