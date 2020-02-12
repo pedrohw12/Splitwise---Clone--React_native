@@ -175,7 +175,7 @@ export const GroupList = styled.ScrollView`
 `;
 
 export const ItemDiv = styled.View`
-  background: #ddd;
+  background: #0097e6;
   padding-left: 10px;
   justify-content: center;
   height: 60px;
@@ -184,7 +184,10 @@ export const ItemDiv = styled.View`
   border-radius: 4px;
 `;
 
-export const ItemName = styled.Text``;
+export const ItemName = styled.Text`
+  color: #fff;
+  font-weight: bold;
+`;
 
 export const ClearBtn = styled.TouchableOpacity`
   background: #f00;
@@ -195,7 +198,7 @@ export const ClearBtn = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   margin-left: 80%;
-  margin-top: 15%;
+  margin-top: 100px;
 `;
 
 export const ClearBtnTxt = styled.Text``;
